@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{C7E107C7-390A-4514-B1B0-48FD6849DC09}|Project_Team_Yager\\Project_Team_Yager.vcxproj|solutionrelative:Project_Team_Yager\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C7E107C7-390A-4514-B1B0-48FD6849DC09}|Project_Team_Yager\\Project_Team_Yager.vcxproj|C:\\Users\\GRIGS\\Desktop\\Proektna\\sprint-eschool-yager-code\\Project_Team_Yager\\Project_Team_Yager\\User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C7E107C7-390A-4514-B1B0-48FD6849DC09}|Project_Team_Yager\\Project_Team_Yager.vcxproj|solutionrelative:Project_Team_Yager\\User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7E107C7-390A-4514-B1B0-48FD6849DC09}|Project_Team_Yager\\Project_Team_Yager.vcxproj|C:\\Users\\GRIGS\\Desktop\\Proektna\\sprint-eschool-yager-code\\Project_Team_Yager\\Project_Team_Yager\\User.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C7E107C7-390A-4514-B1B0-48FD6849DC09}|Project_Team_Yager\\Project_Team_Yager.vcxproj|solutionrelative:Project_Team_Yager\\User.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C7E107C7-390A-4514-B1B0-48FD6849DC09}|Project_Team_Yager\\Project_Team_Yager.vcxproj|C:\\Users\\GRIGS\\Desktop\\Proektna\\sprint-eschool-yager-code\\Project_Team_Yager\\Project_Team_Yager\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C7E107C7-390A-4514-B1B0-48FD6849DC09}|Project_Team_Yager\\Project_Team_Yager.vcxproj|solutionrelative:Project_Team_Yager\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -30,11 +38,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cpp",
+              "DocumentMoniker": "C:\\Users\\GRIGS\\Desktop\\Proektna\\sprint-eschool-yager-code\\Project_Team_Yager\\Project_Team_Yager\\User.cpp",
+              "RelativeDocumentMoniker": "Project_Team_Yager\\User.cpp",
+              "ToolTip": "C:\\Users\\GRIGS\\Desktop\\Proektna\\sprint-eschool-yager-code\\Project_Team_Yager\\Project_Team_Yager\\User.cpp",
+              "RelativeToolTip": "Project_Team_Yager\\User.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-12T19:51:58.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "User.h",
+              "DocumentMoniker": "C:\\Users\\GRIGS\\Desktop\\Proektna\\sprint-eschool-yager-code\\Project_Team_Yager\\Project_Team_Yager\\User.h",
+              "RelativeDocumentMoniker": "Project_Team_Yager\\User.h",
+              "ToolTip": "C:\\Users\\GRIGS\\Desktop\\Proektna\\sprint-eschool-yager-code\\Project_Team_Yager\\Project_Team_Yager\\User.h",
+              "RelativeToolTip": "Project_Team_Yager\\User.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-12T19:51:17.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Menu.h",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Desktop\\Proektna\\sprint-eschool-yager-code\\Project_Team_Yager\\Project_Team_Yager\\Menu.h",
               "RelativeDocumentMoniker": "Project_Team_Yager\\Menu.h",
@@ -53,14 +87,14 @@
               "RelativeDocumentMoniker": "Project_Team_Yager\\Menu.cpp",
               "ToolTip": "C:\\Users\\GRIGS\\Desktop\\Proektna\\sprint-eschool-yager-code\\Project_Team_Yager\\Project_Team_Yager\\Menu.cpp",
               "RelativeToolTip": "Project_Team_Yager\\Menu.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-11T21:59:08.201Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Question.h",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Desktop\\Proektna\\sprint-eschool-yager-code\\Project_Team_Yager\\Project_Team_Yager\\Question.h",
               "RelativeDocumentMoniker": "Project_Team_Yager\\Question.h",
@@ -68,12 +102,11 @@
               "RelativeToolTip": "Project_Team_Yager\\Question.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-11T21:53:23.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T21:53:23.82Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "QuestionBank.h",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Desktop\\Proektna\\sprint-eschool-yager-code\\Project_Team_Yager\\Project_Team_Yager\\QuestionBank.h",
               "RelativeDocumentMoniker": "Project_Team_Yager\\QuestionBank.h",
@@ -81,18 +114,17 @@
               "RelativeToolTip": "Project_Team_Yager\\QuestionBank.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-11T21:53:21.389Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T21:53:21.389Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Project_Team_Yager.cpp",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Desktop\\Proektna\\sprint-eschool-yager-code\\Project_Team_Yager\\Project_Team_Yager\\Project_Team_Yager.cpp",
               "RelativeDocumentMoniker": "Project_Team_Yager\\Project_Team_Yager.cpp",
               "ToolTip": "C:\\Users\\GRIGS\\Desktop\\Proektna\\sprint-eschool-yager-code\\Project_Team_Yager\\Project_Team_Yager\\Project_Team_Yager.cpp",
               "RelativeToolTip": "Project_Team_Yager\\Project_Team_Yager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-09T18:04:14.788Z",
               "EditorCaption": ""
