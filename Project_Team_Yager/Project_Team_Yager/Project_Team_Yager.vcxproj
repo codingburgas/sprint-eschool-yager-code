@@ -130,6 +130,7 @@
     <ClCompile Include="Category.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Project_Team_Yager.cpp" />
+    <ClCompile Include="Question.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
