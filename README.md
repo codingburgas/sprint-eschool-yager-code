@@ -7,11 +7,11 @@
 # Sprint-9th-grade-Eschool
 
 📋 Table of contents
-[Used Technologies](#technologies)
-[Programming languages:](#languages)
-[Documentation](#documentation)
-[Presentation](#presentation)
-[Our Team](#team)
+- [Used Technologies](#technologies)
+- [Programming languages:](#languages)
+- [Documentation](#documentation)
+- [Presentation](#presentation)
+- [Our Team](#team)
 <br></br>
 
 ##  Used Technologies <a name="technologies"></a>
