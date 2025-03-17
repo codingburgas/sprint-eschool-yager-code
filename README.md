@@ -1,3 +1,9 @@
+<h1 align="center">💻Yager Code💻</h1>
+
+<div align="center">
+    <img src="https://github.com/codingburgas/sprint-eschool-yager-code/blob/main/Logo.jpg" alt="Logo" width="300"/>
+</div>
+
 # Sprint-9th-grade-Eschool
 
 
