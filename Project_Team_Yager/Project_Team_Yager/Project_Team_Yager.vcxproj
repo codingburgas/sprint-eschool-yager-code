@@ -24,6 +24,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui.h" />
+    <ClInclude Include="question.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="questions.txt" />
+    <Text Include="users.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
