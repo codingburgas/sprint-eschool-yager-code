@@ -25,3 +25,35 @@ enum type select_category() {
     return (enum type)(choice - 1);
 
 }
+
+void print_stats(
+    unsigned correct_answers,
+    unsigned total_questions,
+    long exam_duration_seconds,
+    vector<unsigned> per_category_correct) {
+
+    double percent_correct = (total_questions > 0) ? (100.0 * correct_answers / total_questions) : 0.0;
+    char rating = get_rating(percent_correct);
+
+    cout << "\n--- Exam Statistics ---\n";
+
+    cout << "Total exam time: " << exam_duration_seconds << " seconds\n";
+
+    cout << "Questions answered: " << total_questions << "\n";
+    cout << "Correct answers: " << correct_answers << "\n";
+    cout << fixed << setprecision(2);
+    cout << "Percentage correct: " << percent_correct << "%\n";
+    cout << "Rating: " << rating << "\n\n";
+
+    cout << "Breakdown per question type:\n";
+
+    for (size_t i = 0; i < CATEGORY_COUNT; i++) {
+        double cat_percent = 100.0 * per_category_correct[i] / 4;
+        cout << category_names[i] << ": "
+            << per_category_correct[i] << "/" << 4
+            << " (" << cat_percent << "% correct)\n";
+    }
+
+    cout << "-----------------------\n";
+
+}
