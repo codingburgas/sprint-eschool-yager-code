@@ -10,7 +10,16 @@ enum type {
     GEOGRAPHY,
     BIOLOGY,
     MATH,
-    INFORMATICS
+    INFORMATICS,
+    CATEGORY_COUNT
+};
+
+const string category_names[CATEGORY_COUNT] = {
+    "History",
+    "Geography",
+    "Biology",
+    "Math",
+    "Informatics"
 };
 
 typedef struct question {
