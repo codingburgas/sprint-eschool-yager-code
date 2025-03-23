@@ -39,8 +39,8 @@ Under development...
 <br></br>
 
 ##  Our Team 🧒<br> <a name="team"></a>
-- BHStoyanov23@codingburgas.bg – Scrum Trainer
-- YAVVelizarov23@codingburgas.bg – Back-end Developer
-- PPParvanov23@codingburgas.bg – Front-end Developer
+- PPParvanov23@codingburgas.bg – Scrum Trainer
+- BHStoyanov23@codingburgas.bg – Back-end Developer
+- YAVVelizarov23@codingburgas.bg – Front-end Developer
 - DDAlexsandrov23@codingburgas.bg – Designer
 <br>
