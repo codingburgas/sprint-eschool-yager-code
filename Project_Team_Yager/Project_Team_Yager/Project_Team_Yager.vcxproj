@@ -24,6 +24,7 @@
     <ClCompile Include="question.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="exam.h" />
     <ClInclude Include="gui.h" />
     <ClInclude Include="question.h" />
   </ItemGroup>
