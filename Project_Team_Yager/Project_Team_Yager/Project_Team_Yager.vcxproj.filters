@@ -24,6 +24,9 @@
     <ClCompile Include="question.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="exam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui.h">
