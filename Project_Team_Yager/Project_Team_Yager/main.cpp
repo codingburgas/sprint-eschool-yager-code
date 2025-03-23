@@ -21,7 +21,10 @@ int main() {
 
         switch (command) {
         case CMD_START: {
-            enum type category = select_category();
+            vector<question> exam = generate_exam();
+            for (auto q : exam) {
+                ask(q);
+            }
             break;
         }
         case CMD_CREATE: {

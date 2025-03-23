@@ -36,3 +36,18 @@ vector<question> generate_exam() {
     shuffle(exam.begin(), exam.end(), rng);
     return exam;
 }
+
+int ask(question question) {
+    vector<string> options = { question.answer, question.wrong1, question.wrong2, question.wrong3 };
+    random_device rd;
+    mt19937 rng(rd());
+    shuffle(options.begin(), options.end(), rng);
+    cout << question.text << endl;
+    for (int i = 0; i < options.size(); i++) {
+        cout << (i + 1) << ". " << options[i] << endl;
+    }
+    int userInput = 0;
+    cout << "Enter your answer (1-4): ";
+    cin >> userInput;
+    return userInput;
+}
