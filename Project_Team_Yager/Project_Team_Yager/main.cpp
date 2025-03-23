@@ -17,15 +17,20 @@ int main() {
 
         menu();
         cin >> command;
+        cout << command;
 
         switch (command) {
-        case CMD_START:
+        case CMD_START: {
+            enum type category = select_category();
+            break;
+        }
+        case CMD_CREATE: {
+            break;
+        }
+        case CMD_STATS: {
 
             break;
-        case CMD_CREATE:
-            break;
-        case CMD_STATS:
-            break;
+        }
         }
 
     } while (command != CMD_EXIT);
