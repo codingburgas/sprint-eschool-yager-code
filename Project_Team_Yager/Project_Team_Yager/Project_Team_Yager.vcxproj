@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="gui.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="question.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui.h" />

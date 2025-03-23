@@ -2,6 +2,10 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include <algorithm>
+#include <random>
+#include <stdexcept>
 
 using namespace std;
 
@@ -30,3 +34,8 @@ typedef struct question {
     string wrong3;
     enum type type;
 } question;
+
+vector<question> filterQuestionsByCategory(vector<question> allQuestions, int category);
+vector<question> selectRandomSubset(vector<question> questionsList, size_t count, mt19937 rng);
+vector<question> generate_exam();
+int ask(question question);

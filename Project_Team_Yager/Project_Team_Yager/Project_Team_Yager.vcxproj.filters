@@ -21,6 +21,9 @@
     <ClCompile Include="gui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="question.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui.h">
@@ -31,7 +34,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="questions.txt" />
-    <Text Include="users.txt" />
+    <Text Include="questions.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="users.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
