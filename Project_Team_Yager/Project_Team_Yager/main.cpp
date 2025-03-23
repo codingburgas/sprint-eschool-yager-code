@@ -21,9 +21,13 @@ int main() {
 
         switch (command) {
         case CMD_START: {
+            unsigned correct_answers = 0;
             vector<question> exam = generate_exam();
-            for (auto q : exam) {
-                ask(q);
+            for (auto question : exam) {
+                bool result = ask(question);
+                if (result == true) {
+                    correct_answers++;
+                }
             }
             break;
         }

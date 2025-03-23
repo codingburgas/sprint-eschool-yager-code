@@ -38,4 +38,4 @@ typedef struct question {
 vector<question> filterQuestionsByCategory(vector<question> allQuestions, int category);
 vector<question> selectRandomSubset(vector<question> questionsList, size_t count, mt19937 rng);
 vector<question> generate_exam();
-int ask(question question);
+bool ask(question question);
