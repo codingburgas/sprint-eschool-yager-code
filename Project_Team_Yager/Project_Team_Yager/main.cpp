@@ -3,6 +3,7 @@
 #include <fstream>
 #include <chrono>
 #include <random>
+#include <climits>
 
 #include "user.h"
 #include "gui.h"
@@ -10,7 +11,8 @@
 #define CMD_START 1
 #define CMD_CREATE 2
 #define CMD_STATS 3
-#define CMD_SAVE 4
+#define CMD_SUMMARY 4
+#define CMD_SAVE 5
 #define CMD_EXIT 0
 
 using namespace std;
@@ -113,6 +115,74 @@ int main() {
 
             break;
         }
+
+        case CMD_SUMMARY: {
+            if (users.empty()) {
+                cout << "No user data available.\n";
+                break;
+            }
+
+            double totalPercentage = 0.0;
+            double totalTime = 0.0;
+
+            double bestOverall = -1.0;
+            string bestOverallUser;
+            double worstOverall = 101.0;
+            string worstOverallUser;
+
+            double bestCategory = -1.0;
+            string bestCategoryUser;
+            string bestCategoryName;
+
+            double worstCategory = 101.0;
+            string worstCategoryUser;
+            string worstCategoryName;
+
+            long bestTime = LONG_MAX;   // best: minimum exam duration
+            string bestTimeUser;
+            long worstTime = 0;         // worst: maximum exam duration
+            string worstTimeUser;
+
+            // Process each user's data
+            for (const auto& u : users) {
+                double userPercentage = (u.total_questions > 0) ? (100.0 * u.correct_answers / u.total_questions) : 0.0;
+                totalPercentage += userPercentage;
+                totalTime += u.exam_duration_seconds;
+
+                if (userPercentage > bestOverall) {
+                    bestOverall = userPercentage;
+                    bestOverallUser = u.name;
+                }
+                if (userPercentage < worstOverall) {
+                    worstOverall = userPercentage;
+                    worstOverallUser = u.name;
+                }
+
+                if (u.exam_duration_seconds < bestTime) {
+                    bestTime = u.exam_duration_seconds;
+                    bestTimeUser = u.name;
+                }
+                if (u.exam_duration_seconds > worstTime) {
+                    worstTime = u.exam_duration_seconds;
+                    worstTimeUser = u.name;
+                }
+
+                // Iterate over each category result for this user.
+                for (size_t i = 0; i < u.per_category_correct.size(); i++) {
+                    // Assuming each category has 4 questions.
+                    double catPercentage = 100.0 * u.per_category_correct[i] / 4;
+                    if (catPercentage > bestCategory) {
+                        bestCategory = catPercentage;
+                        bestCategoryUser = u.name;
+                        bestCategoryName = category_names[i];
+                    }
+                    if (catPercentage < worstCategory) {
+                        worstCategory = catPercentage;
+                        worstCategoryUser = u.name;
+                        worstCategoryName = category_names[i];
+                    }
+                }
+            }
 
         case CMD_SAVE: {
 
