@@ -25,7 +25,7 @@
  
 </a>
  
-<a href="https://cplusplus.com/"> <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="CPP icon" width="55"/></a>
+<a href="https://cplusplus.com/"> <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="CPP icon" width="60"/></a>
 <br></br>
 
 ## 📃 Documentation 
