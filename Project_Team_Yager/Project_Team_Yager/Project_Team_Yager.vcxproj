@@ -23,6 +23,7 @@
     <ClCompile Include="gui.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="question.cpp" />
+    <ClCompile Include="user.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="exam.h" />

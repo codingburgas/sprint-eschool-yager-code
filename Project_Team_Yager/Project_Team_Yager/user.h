@@ -12,3 +12,5 @@ typedef struct {
     long exam_duration_seconds;
     vector<unsigned> per_category_correct;
 } user;
+
+vector<user> loadUsersFromFile(string filename);
