@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 #include <chrono>
 #include <random>
 
@@ -9,6 +10,7 @@
 #define CMD_START 1
 #define CMD_CREATE 2
 #define CMD_STATS 3
+#define CMD_SAVE 4
 #define CMD_EXIT 0
 
 using namespace std;
@@ -106,6 +108,35 @@ int main() {
             cout << endl;
 
             break;
+        }
+
+        case CMD_SAVE: {
+
+            ofstream outfile("users.txt");
+            if (!outfile.is_open()) {
+                cerr << "Error: Could not open file for writing." << endl;
+                break;
+            }
+            for (const auto& u : users) {
+                outfile << u.name << "\n";
+                outfile << u.total_questions << " "
+                    << u.correct_answers << " "
+                    << u.exam_duration_seconds << "\n";
+
+                for (size_t i = 0; i < u.per_category_correct.size(); i++) {
+                    outfile << u.per_category_correct[i];
+                    if (i < u.per_category_correct.size() - 1) {
+                        outfile << " ";
+                    }
+                }
+                outfile << "\n";
+                outfile << "\n";
+            }
+
+            outfile.close();
+            cout << "User data saved successfully to users.txt" << endl;
+            break;
+
         }
         }
 
