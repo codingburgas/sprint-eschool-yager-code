@@ -17,6 +17,7 @@ using namespace std;
 
 int main() {
 
+
     int command = CMD_EXIT;
     do {
 
@@ -112,6 +113,8 @@ int main() {
 
         case CMD_SAVE: {
 
+            // Saving the users to file
+
             ofstream outfile("users.txt");
             if (!outfile.is_open()) {
                 cerr << "Error: Could not open file for writing." << endl;
@@ -136,6 +139,27 @@ int main() {
             outfile.close();
             cout << "User data saved successfully to users.txt" << endl;
             break;
+
+            // Saving the questions to file
+
+            ofstream qFile("questions.txt");
+            if (!qFile.is_open()) {
+                cerr << "Error: Could not open file for writing questions." << endl;
+                break;
+            }
+
+            for (const auto& q : questions) {
+                qFile << q.text << "\n";
+                qFile << q.answer << "\n";
+                qFile << q.wrong1 << "\n";
+                qFile << q.wrong2 << "\n";
+                qFile << q.wrong3 << "\n";
+                qFile << static_cast<int>(q.type) << "\n";
+                qFile << "\n";
+            }
+
+            qFile.close();
+            cout << "Questions saved successfully to questions.txt." << endl;
 
         }
         }
