@@ -58,8 +58,60 @@ vector<question> generate_exam(vector<question> questions) {
     return exam;
 
 }
+vector<question> loadQuestionsFromFile(string filename) {
+
+    vector<question> loadedQuestions;
+
+    ifstream infile(filename);
+    if (!infile.is_open()) {
+        cerr << "Error: Could not open file " << filename << " for reading.\n";
+        return loadedQuestions;
+    }
+
+    string line;
+    while (getline(infile, line)) {
+        // Skip empty lines
+        if (line.empty())
+            continue;
+
+        // Read the question text
+        string text = line;
+
+        // Read correct answer
+        if (!getline(infile, line)) break;
+        string answer = line;
+
+        // Read wrong answer 1
+        if (!getline(infile, line)) break;
+        string wrong1 = line;
+
+        // Read wrong answer 2
+        if (!getline(infile, line)) break;
+        string wrong2 = line;
+
+        // Read wrong answer 3
+        if (!getline(infile, line)) break;
+        string wrong3 = line;
+
+        // Read category type as integer
+        if (!getline(infile, line)) break;
+        int typeInt = stoi(line);
+        enum type cat = static_cast<type>(typeInt);
+
+        // Create a question and add it to the vector
+        question q{ text, answer, wrong1, wrong2, wrong3, cat };
+        loadedQuestions.push_back(q);
+
+        // Read the blank separator line
+        getline(infile, line);
+    }
+
+    infile.close();
+    return loadedQuestions;
+}
 
 bool ask(question question) {
+
     vector<string> options = { question.answer, question.wrong1, question.wrong2, question.wrong3 };
     random_device rd;
     mt19937 rng(rd());
