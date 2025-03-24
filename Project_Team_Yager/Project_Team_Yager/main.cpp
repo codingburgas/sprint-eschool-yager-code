@@ -3,7 +3,7 @@
 #include <chrono>
 #include <random>
 
-
+#include "user.h"
 #include "gui.h"
 
 #define CMD_START 1
@@ -20,11 +20,15 @@ int main() {
 
         menu();
         cin >> command;
-        cout << command;
+        cout << endl;
 
         switch (command) {
 
         case CMD_START: {
+
+            string user_name;
+            cout << "Enter your name: ";
+            getline(cin, user_name);
 
             unsigned correct_answers = 0;
             vector<unsigned> per_category_correct(CATEGORY_COUNT, 0);
@@ -39,6 +43,7 @@ int main() {
                     correct_answers++;
                     per_category_correct[question.type]++;
                 }
+                cout << endl;
             }
 
             auto end_time = chrono::steady_clock::now();
@@ -46,6 +51,14 @@ int main() {
 
             print_stats(correct_answers, exam.size(), exam_duration, per_category_correct);
             
+            user currentUser;
+            currentUser.name = user_name;
+            currentUser.correct_answers = correct_answers;
+            currentUser.total_questions = exam.size();
+            currentUser.exam_duration_seconds = exam_duration;
+            currentUser.per_category_correct = per_category_correct;
+            users.push_back(currentUser);
+
             break;
 
         }

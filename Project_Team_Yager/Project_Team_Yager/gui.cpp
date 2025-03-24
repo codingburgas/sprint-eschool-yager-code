@@ -54,6 +54,6 @@ void print_stats(
             << " (" << cat_percent << "% correct)\n";
     }
 
-    cout << "-----------------------\n";
+    cout << "-----------------------\n\n\n";
 
 }
