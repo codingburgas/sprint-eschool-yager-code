@@ -65,7 +65,7 @@ bool ask(question question) {
     }
 
     int userInput = 0;
-    cout << "Enter your answer (1-4): ";
+    cout << "\nEnter your answer (1-4): ";
     cin >> userInput;
 
     return options[userInput - 1] == question.answer;
