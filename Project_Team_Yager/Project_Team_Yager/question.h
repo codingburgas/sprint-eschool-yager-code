@@ -37,5 +37,6 @@ typedef struct {
 
 vector<question> filterQuestionsByCategory(vector<question> allQuestions, int category);
 vector<question> selectRandomSubset(vector<question> questionsList, size_t count, mt19937 rng);
-vector<question> generate_exam();
+vector<question> generate_exam(vector<question> questionsList);
+vector<question> loadQuestionsFromFile(string filename);
 bool ask(question question);

@@ -17,6 +17,9 @@ using namespace std;
 
 int main() {
 
+    vector<user> users = loadUsersFromFile("users.txt");
+    vector<question> questions = loadQuestionsFromFile("questions.txt");
+
 
     int command = CMD_EXIT;
     do {
@@ -39,7 +42,7 @@ int main() {
 
             unsigned correct_answers = 0;
             vector<unsigned> per_category_correct(CATEGORY_COUNT, 0);
-            vector<question> exam = generate_exam();
+            vector<question> exam = generate_exam(questions);
 
             auto start_time = chrono::steady_clock::now();
 
@@ -120,7 +123,7 @@ int main() {
                 cerr << "Error: Could not open file for writing." << endl;
                 break;
             }
-            for (const auto& u : users) {
+            for (auto u : users) {
                 outfile << u.name << "\n";
                 outfile << u.total_questions << " "
                     << u.correct_answers << " "
@@ -138,7 +141,7 @@ int main() {
 
             outfile.close();
             cout << "User data saved successfully to users.txt" << endl;
-            break;
+            
 
             // Saving the questions to file
 
@@ -148,7 +151,7 @@ int main() {
                 break;
             }
 
-            for (const auto& q : questions) {
+            for (auto q : questions) {
                 qFile << q.text << "\n";
                 qFile << q.answer << "\n";
                 qFile << q.wrong1 << "\n";
@@ -160,6 +163,8 @@ int main() {
 
             qFile.close();
             cout << "Questions saved successfully to questions.txt." << endl;
+
+            break;
 
         }
         }

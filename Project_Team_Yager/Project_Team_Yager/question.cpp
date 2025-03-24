@@ -29,7 +29,7 @@ vector<question> selectRandomSubset(vector<question> questionsList, size_t count
 
 }
 
-vector<question> generate_exam() {
+vector<question> generate_exam(vector<question> questions) {
 
     vector<question> exam;
     random_device rd;
