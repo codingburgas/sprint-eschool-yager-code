@@ -28,6 +28,7 @@
     <ClInclude Include="exam.h" />
     <ClInclude Include="gui.h" />
     <ClInclude Include="question.h" />
+    <ClInclude Include="user.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="questions.txt" />

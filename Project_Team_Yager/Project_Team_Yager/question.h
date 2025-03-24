@@ -26,7 +26,7 @@ const string category_names[CATEGORY_COUNT] = {
     "Informatics"
 };
 
-typedef struct question {
+typedef struct {
     string text;
     string answer;
     string wrong1;
