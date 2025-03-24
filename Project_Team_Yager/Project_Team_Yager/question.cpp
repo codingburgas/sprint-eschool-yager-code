@@ -1,5 +1,11 @@
 #include "question.h"
 
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include <vector>
+#include <stdexcept>
+
 
 vector<question> filterQuestionsByCategory(vector<question> allQuestions, int category) {
 
@@ -65,8 +71,23 @@ bool ask(question question) {
     }
 
     int userInput = 0;
-    cout << "\nEnter your answer (1-4): ";
-    cin >> userInput;
+
+    while (true) {
+        cout << "\nEnter your answer (1-4): ";
+        cin >> userInput;
+
+        if (cin.fail() || userInput < 1 || userInput > 4) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please enter a number between 1 and 4." << endl;
+        }
+        else {
+            break;
+        }
+    }
+
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
 
     return options[userInput - 1] == question.answer;
 }
