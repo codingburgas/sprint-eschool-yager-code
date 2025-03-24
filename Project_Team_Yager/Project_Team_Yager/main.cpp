@@ -19,6 +19,7 @@ int main() {
     do {
 
         menu();
+        cout << "\nCommand: ";
         cin >> command;
         cout << endl;
 
@@ -26,9 +27,12 @@ int main() {
 
         case CMD_START: {
 
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
             string user_name;
             cout << "Enter your name: ";
             getline(cin, user_name);
+            cout << endl;
 
             unsigned correct_answers = 0;
             vector<unsigned> per_category_correct(CATEGORY_COUNT, 0);
@@ -67,6 +71,39 @@ int main() {
             break;
         }
         case CMD_STATS: {
+
+            if (users.empty()) {
+
+                cout << "No user stats available yet.\n";
+
+            }
+            else {
+
+                cout << left
+                    << setw(20) << "Name"
+                    << setw(12) << "Total Q"
+                    << setw(12) << "Correct"
+                    << setw(15) << "Duration(s)"
+                    << setw(15) << "Percent"
+                    << setw(10) << "Rating" << "\n";
+                cout << string(20 + 12 + 12 + 15 + 15 + 10, '-') << "\n";
+
+                for (user u : users) {
+                    double percent_correct = (u.total_questions > 0) ? (100.0 * u.correct_answers / u.total_questions) : 0.0;
+                    char rating = get_rating(percent_correct);
+
+                    cout << left
+                        << setw(20) << u.name
+                        << setw(12) << u.total_questions
+                        << setw(12) << u.correct_answers
+                        << setw(15) << u.exam_duration_seconds
+                        << setw(13) << fixed << setprecision(2) << percent_correct
+                        << setw(10) << rating << "\n";
+                }
+
+            }
+
+            cout << endl;
 
             break;
         }
