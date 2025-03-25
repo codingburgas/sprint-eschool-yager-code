@@ -6,6 +6,7 @@
 #include <climits>
 
 #include "user.h"
+#include "question.h"
 #include "gui.h"
 
 #define CMD_START 1
@@ -293,7 +294,7 @@ int main() {
 
             ofstream outfile("users.txt");
             if (!outfile.is_open()) {
-                cerr << "Error: Could not open file for writing." << endl;
+                cout << "Error: Could not open file for writing." << endl;
                 break;
             }
             for (auto u : users) {
@@ -320,7 +321,7 @@ int main() {
 
             ofstream qFile("questions.txt");
             if (!qFile.is_open()) {
-                cerr << "Error: Could not open file for writing questions." << endl;
+                cout << "Error: Could not open file for writing questions." << endl;
                 break;
             }
 

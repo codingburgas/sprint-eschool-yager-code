@@ -14,7 +14,7 @@ vector<user> loadUsersFromFile(string filename) {
 
     ifstream infile(filename);
     if (!infile.is_open()) {
-        cerr << "Error: Could not open file " << filename << " for reading." << endl;
+        cout << "Error: Could not open file " << filename << " for reading." << endl;
         return loadedUsers;
     }
 
@@ -52,4 +52,3 @@ vector<user> loadUsersFromFile(string filename) {
     infile.close();
     return loadedUsers;
 }
-﻿

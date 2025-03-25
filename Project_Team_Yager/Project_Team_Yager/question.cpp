@@ -64,7 +64,7 @@ vector<question> loadQuestionsFromFile(string filename) {
 
     ifstream infile(filename);
     if (!infile.is_open()) {
-        cerr << "Error: Could not open file " << filename << " for reading.\n";
+        cout << "Error: Could not open file " << filename << " for reading.\n";
         return loadedQuestions;
     }
 
