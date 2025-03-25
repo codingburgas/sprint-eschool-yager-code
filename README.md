@@ -32,10 +32,10 @@
  
 ### Documentation <a name="documentation"></a>
  
-Under development...
+<a href="https://github.com/codingburgas/sprint-eschool-yager-code/blob/main/Yager%20Code.docx">Documentation</a>
 
 ### Presentation <a name="presentation"></a>
-Under development...
+<a href="https://github.com/codingburgas/sprint-eschool-yager-code/blob/main/Yager%20Code%20presentation.pptx">Presentation</a>
 <br></br>
 
 ##  Our Team 🧒<br> <a name="team"></a>
