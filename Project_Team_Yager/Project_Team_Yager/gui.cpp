@@ -5,6 +5,7 @@ void menu() {
     cout << "2. Add question" << endl;
     cout << "3. Show stats" << endl;
     cout << "4. Save data" << endl;
+    cout << "5. Save data" << endl;
     cout << "0. Exit" << endl;
 }
 enum type select_category() {
