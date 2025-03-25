@@ -1,12 +1,14 @@
 #include "gui.h"
 
 void menu() {
+    cout << "===================== MAIN MENU =======================" << endl;;
     cout << "1. Start exam" << endl;
     cout << "2. Add question" << endl;
     cout << "3. Show stats" << endl;
     cout << "4. Show summary" << endl;
     cout << "5. Save data" << endl;
     cout << "0. Exit" << endl;
+    cout << "=======================================================" << endl;
 }
 enum type select_category() {
 

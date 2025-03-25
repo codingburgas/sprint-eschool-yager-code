@@ -23,6 +23,15 @@ int main() {
     vector<user> users = loadUsersFromFile("users.txt");
     vector<question> questions = loadQuestionsFromFile("questions.txt");
 
+    cout << " __     __                                   _      \n";
+    cout << " \\ \\   / /                                  | |     \n";
+    cout << "  \\ \\_/ /_ _  __ _  ___ _ __    ___ ___   __| | ___ \n";
+    cout << "   \\   / _` |/ _` |/ _ \\ '__|  / __/ _ \\ / _` |/ _ \\\n";
+    cout << "    | | (_| | (_| |  __/ |    | (_| (_) | (_| |  __/\n";
+    cout << "    |_|\\__,_|\\__, |\\___|_|     \\___\\___/ \\__,_|\\___|\n";
+    cout << "              __/ |                                 \n";
+    cout << "             |___/                                  \n";
+    cout << "\n";
 
     int command = CMD_EXIT;
     do {
