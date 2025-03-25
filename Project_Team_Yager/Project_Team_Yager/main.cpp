@@ -217,6 +217,7 @@ int main() {
             double avgTime = totalTime / users.size();
 
             // Print a overal results.
+
             cout << left << setw(30) << "Metric"
                 << setw(20) << "Value"
                 << setw(30) << "User/Category" << "\n";
@@ -245,6 +246,43 @@ int main() {
             cout << left << setw(30) << "Worst Time (sec)"
                 << setw(20) << worstTime
                 << setw(30) << worstTimeUser << "\n\n";
+            
+            // Now print per-category summary.
+            cout << left << setw(15) << "Category"
+                << setw(20) << "Average (%)"
+                << setw(20) << "Best (%)"
+                << setw(20) << "Worst (%)"
+                << "Best/Worst Users" << "\n";
+            cout << string(90, '-') << "\n";
+
+            // Iterate over each category.
+            for (int i = 0; i < CATEGORY_COUNT; i++) {
+                double sum = 0.0;
+                double best = -1.0;
+                double worst = 101.0;
+                string bestUser, worstUser;
+
+                // For each user, compute the category percentage (assuming 4 questions per category).
+                for (const auto& u : users) {
+                    double catPercentage = 100.0 * u.per_category_correct[i] / 4;
+                    sum += catPercentage;
+                    if (catPercentage > best) {
+                        best = catPercentage;
+                        bestUser = u.name;
+                    }
+                    if (catPercentage < worst) {
+                        worst = catPercentage;
+                        worstUser = u.name;
+                    }
+                }
+                double avg = sum / users.size();
+
+                cout << left << setw(15) << category_names[i]
+                    << setw(20) << fixed << setprecision(2) << avg
+                    << setw(20) << fixed << setprecision(2) << best
+                    << setw(20) << fixed << setprecision(2) << worst
+                    << bestUser << " / " << worstUser << "\n";
+            }
 
             break;
         }
