@@ -86,34 +86,38 @@ int main() {
             cout << "Enter question text: ";
             getline(cin, newQuestion.text);
 
-            // Prompt for correct answer
+            
             cout << "Enter correct answer: ";
             getline(cin, newQuestion.answer);
 
-            // Prompt for wrong answer 1
+            
             cout << "Enter wrong answer 1: ";
             getline(cin, newQuestion.wrong1);
 
-            // Prompt for wrong answer 2
+            
             cout << "Enter wrong answer 2: ";
             getline(cin, newQuestion.wrong2);
 
-            // Prompt for wrong answer 3
+            
             cout << "Enter wrong answer 3: ";
             getline(cin, newQuestion.wrong3);
 
-            // Prompt for question type
+            cout << "\nAvailable categories:" << endl;
+            for (int i = 0; i < CATEGORY_COUNT; i++) {
+                cout << i << " - " << category_names[i] << endl;
+            }
+
             int typeInput = -1;
             cout << "Enter question type (number from 0 to " << (CATEGORY_COUNT - 1) << "): ";
             while (!(cin >> typeInput) || typeInput < 0 || typeInput >= CATEGORY_COUNT) {
-                cin.clear(); // clear the error flag
-                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // discard invalid input
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // discard invalid input
                 cout << "Invalid input. Please enter a number between 0 and " << (CATEGORY_COUNT - 1) << ": ";
             }
             newQuestion.type = static_cast<type>(typeInput);
 
             // Clear the newline left in the input stream after numeric input
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
             // Add the new question to the global vector
             questions.push_back(newQuestion);
@@ -175,22 +179,16 @@ int main() {
             double worstOverall = 101.0;
             string worstOverallUser;
 
-            double bestCategory = -1.0;
-            string bestCategoryUser;
-            string bestCategoryName;
-
-            double worstCategory = 101.0;
-            string worstCategoryUser;
-            string worstCategoryName;
-
             long bestTime = LONG_MAX;   // best: minimum exam duration
             string bestTimeUser;
             long worstTime = 0;         // worst: maximum exam duration
             string worstTimeUser;
 
-            // Process each user's data
+            // Process overall metrics from each user's data.
             for (const auto& u : users) {
-                double userPercentage = (u.total_questions > 0) ? (100.0 * u.correct_answers / u.total_questions) : 0.0;
+                double userPercentage = (u.total_questions > 0) 
+                    ? (100.0 * u.correct_answers / u.total_questions) 
+                    : 0.0;
                 totalPercentage += userPercentage;
                 totalTime += u.exam_duration_seconds;
 
@@ -212,27 +210,13 @@ int main() {
                     worstTimeUser = u.name;
                 }
 
-                // Iterate over each category result for this user.
-                for (size_t i = 0; i < u.per_category_correct.size(); i++) {
-                    // Assuming each category has 4 questions.
-                    double catPercentage = 100.0 * u.per_category_correct[i] / 4;
-                    if (catPercentage > bestCategory) {
-                        bestCategory = catPercentage;
-                        bestCategoryUser = u.name;
-                        bestCategoryName = category_names[i];
-                    }
-                    if (catPercentage < worstCategory) {
-                        worstCategory = catPercentage;
-                        worstCategoryUser = u.name;
-                        worstCategoryName = category_names[i];
-                    }
-                }
+                
             }
 
             double avgPercentage = totalPercentage / users.size();
             double avgTime = totalTime / users.size();
 
-            // Print a formatted table.
+            // Print a overal results.
             cout << left << setw(30) << "Metric"
                 << setw(20) << "Value"
                 << setw(30) << "User/Category" << "\n";
@@ -249,14 +233,6 @@ int main() {
             cout << left << setw(30) << "Worst Result (%)"
                 << setw(20) << fixed << setprecision(2) << worstOverall
                 << setw(30) << worstOverallUser << "\n";
-
-            cout << left << setw(30) << "Best Category Rating"
-                << setw(20) << fixed << setprecision(2) << bestCategory
-                << setw(30) << (bestCategoryName + " (" + bestCategoryUser + ")") << "\n";
-
-            cout << left << setw(30) << "Worst Category Rating"
-                << setw(20) << fixed << setprecision(2) << worstCategory
-                << setw(30) << (worstCategoryName + " (" + worstCategoryUser + ")") << "\n";
 
             cout << left << setw(30) << "Average Time (sec)"
                 << setw(20) << fixed << setprecision(2) << avgTime
