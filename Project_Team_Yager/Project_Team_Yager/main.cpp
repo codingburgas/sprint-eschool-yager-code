@@ -184,6 +184,50 @@ int main() {
                 }
             }
 
+            double avgPercentage = totalPercentage / users.size();
+            double avgTime = totalTime / users.size();
+
+            // Print a formatted table.
+            cout << left << setw(30) << "Metric"
+                << setw(20) << "Value"
+                << setw(30) << "User/Category" << "\n";
+            cout << string(80, '-') << "\n";
+
+            cout << left << setw(30) << "Average Result (%)"
+                << setw(20) << fixed << setprecision(2) << avgPercentage
+                << setw(30) << "" << "\n";
+
+            cout << left << setw(30) << "Best Result (%)"
+                << setw(20) << fixed << setprecision(2) << bestOverall
+                << setw(30) << bestOverallUser << "\n";
+
+            cout << left << setw(30) << "Worst Result (%)"
+                << setw(20) << fixed << setprecision(2) << worstOverall
+                << setw(30) << worstOverallUser << "\n";
+
+            cout << left << setw(30) << "Best Category Rating"
+                << setw(20) << fixed << setprecision(2) << bestCategory
+                << setw(30) << (bestCategoryName + " (" + bestCategoryUser + ")") << "\n";
+
+            cout << left << setw(30) << "Worst Category Rating"
+                << setw(20) << fixed << setprecision(2) << worstCategory
+                << setw(30) << (worstCategoryName + " (" + worstCategoryUser + ")") << "\n";
+
+            cout << left << setw(30) << "Average Time (sec)"
+                << setw(20) << fixed << setprecision(2) << avgTime
+                << setw(30) << "" << "\n";
+
+            cout << left << setw(30) << "Best Time (sec)"
+                << setw(20) << bestTime
+                << setw(30) << bestTimeUser << "\n";
+
+            cout << left << setw(30) << "Worst Time (sec)"
+                << setw(20) << worstTime
+                << setw(30) << worstTimeUser << "\n\n";
+
+            break;
+        }
+
         case CMD_SAVE: {
 
             // Saving the users to file
