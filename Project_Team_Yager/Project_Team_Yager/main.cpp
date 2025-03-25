@@ -76,8 +76,53 @@ int main() {
         }
 
         case CMD_CREATE: {
+
+            question newQuestion;
+
+            // Ensure the input buffer is clear
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+            // Prompt for question text
+            cout << "Enter question text: ";
+            getline(cin, newQuestion.text);
+
+            // Prompt for correct answer
+            cout << "Enter correct answer: ";
+            getline(cin, newQuestion.answer);
+
+            // Prompt for wrong answer 1
+            cout << "Enter wrong answer 1: ";
+            getline(cin, newQuestion.wrong1);
+
+            // Prompt for wrong answer 2
+            cout << "Enter wrong answer 2: ";
+            getline(cin, newQuestion.wrong2);
+
+            // Prompt for wrong answer 3
+            cout << "Enter wrong answer 3: ";
+            getline(cin, newQuestion.wrong3);
+
+            // Prompt for question type
+            int typeInput = -1;
+            cout << "Enter question type (number from 0 to " << (CATEGORY_COUNT - 1) << "): ";
+            while (!(cin >> typeInput) || typeInput < 0 || typeInput >= CATEGORY_COUNT) {
+                cin.clear(); // clear the error flag
+                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // discard invalid input
+                cout << "Invalid input. Please enter a number between 0 and " << (CATEGORY_COUNT - 1) << ": ";
+            }
+            newQuestion.type = static_cast<type>(typeInput);
+
+            // Clear the newline left in the input stream after numeric input
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+            // Add the new question to the global vector
+            questions.push_back(newQuestion);
+            cout << "New question added successfully." << endl;
+
             break;
+
         }
+
         case CMD_STATS: {
 
             if (users.empty()) {
